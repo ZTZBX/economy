@@ -25,8 +25,29 @@ namespace economy.Client
         {
             while (true)
             {
-                await Delay(1000);
-                TriggerServerEvent("getHandMoney", Exports["core-ztzbx"].playerToken());
+                await Delay(0);
+
+                if (!Money.needToUpdate)
+                {
+                    continue;
+                }
+
+                try
+                {
+                    Exports["core-ztzbx"].playerToken();
+                }
+                catch
+                {
+                    continue;
+                }
+
+                if (Exports["core-ztzbx"].playerToken() != null)
+                {
+
+                    TriggerServerEvent("getHandMoney", Exports["core-ztzbx"].playerToken());
+                }
+
+                Money.needToUpdate = false;
             }
 
         }
@@ -48,6 +69,7 @@ namespace economy.Client
         private void UpdateHandMoney(int quantity)
         {
             Money.hand = quantity;
+            Money.needToUpdate = true;
         }
     }
 }

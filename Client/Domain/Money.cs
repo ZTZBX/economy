@@ -10,5 +10,6 @@ namespace economy.Client
     {
         public static int hand = 0;
         public static string currency = null;
+        public static bool needToUpdate = true;
     }
 }
