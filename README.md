@@ -37,4 +37,3 @@ Exports["economy"].removeHandMoney(quantityToRemoveFromHand)
 int quantityToAddFromHand = 10;
 Exports["economy"].AddHandMoney(quantityToAddFromHand)
 ```
----
