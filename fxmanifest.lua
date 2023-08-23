@@ -26,3 +26,9 @@ dependencies {
 ui_pages {
     'static/index.html'
 }
+
+client_exports {
+    "getHandMoney",
+    "removeHandMoney",
+    "addHandMoney"
+}
