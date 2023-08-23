@@ -16,3 +16,25 @@ mklink /d X:\cfx-server-data\resources\[local]\economy dist
 ```
 
 Afterwards, you can use `ensure economy` in your server.cfg or server console to start the resource.
+
+### **Client Side**
+**Get Current Money on hand**
+```cs
+// Easy and simple
+int playerMoney = Exports["economy"].getHandMoney()
+```
+---
+**Remove Current Money on hand**
+```cs
+// Easy and simple
+int quantityToRemoveFromHand = 10;
+Exports["economy"].removeHandMoney(quantityToRemoveFromHand)
+```
+---
+**Add Current Money on hand**
+```cs
+// Easy and simple
+int quantityToAddFromHand = 10;
+Exports["economy"].AddHandMoney(quantityToAddFromHand)
+```
+---
